@@ -1,5 +1,6 @@
-.App {
-  text-align: center;
+.App .section {
+  border-bottom: solid 1px #000;
+  padding: 10px;
 }
 
 .App-logo {

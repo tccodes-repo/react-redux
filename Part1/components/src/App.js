@@ -1,24 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+import Header from './Header';
+import ColorBox from './ColorBox';
+import ColorViewer from './ColorViewer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      
+      <div className="section">
+        <div>Functional Component</div>
+        <div>
+          <Header content="Hello" />
+        </div>
+      </div>
+
+      <div className="section">
+        <div>Class Component</div>
+        <div>
+          <ColorBox />
+        </div>
+      </div>
+
+      <div className="section">
+        <div>Composable Components</div>
+        <div>
+          <ColorViewer />
+        </div>
+      </div>
     </div>
   );
 }
