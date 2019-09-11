@@ -8,7 +8,7 @@ class Hello extends React.Component {
 
       <div className="container">
 
-        <h1>Hello In JSX!</h1>
+        <h1>Hello!</h1>
 
       </div>
 

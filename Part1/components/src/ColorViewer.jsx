@@ -20,6 +20,7 @@ class ColorViewer extends React.Component {
     handleColorChange(e) {
         e.preventDefault();
 
+        alert(e.target.value);
         this.setState({
             nextColor: e.target.value
         });
