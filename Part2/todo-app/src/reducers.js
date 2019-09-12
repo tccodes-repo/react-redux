@@ -5,7 +5,7 @@ import todoReducer from './reducers/todoReducer';
 
 const createRootReduer = (history) => combineReducers({
     router: connectRouter(history),
-    todo: todoReducer,
+    todos: todoReducer,
 });
 
 export default createRootReduer;
