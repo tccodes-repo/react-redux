@@ -66,6 +66,7 @@ export class ToDoList extends React.Component {
                     <ul style={{ listStyle: 'none' }}>
                         {todos.map((t) => (
                             <Todo 
+                                key={t.id}
                                 item={t}
                                 onDelete={() => deleteTodo(t.id)}
                                 onCheckChanged={(e) => this.handleCheckboxChange(e, t)}

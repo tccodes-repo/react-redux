@@ -1,5 +1,5 @@
-# base image
-FROM node:12.2.0-alpine
+# Stage 0 Build
+FROM node:12.2.0-alpine as build-stage
 
 # set working directory
 WORKDIR /app
@@ -18,5 +18,11 @@ COPY . .
 # build the application
 RUN npm build
 
-# start app
-CMD ["npm", "start"]
+
+# Stage 1, based on Nginx, to have only the compiled app, ready for production with Nginx
+FROM nginx:1.15
+COPY --from=build-stage /app/build/ /var/www
+# Copy the default nginx.conf provided by tiangolo/node-frontend
+COPY --from=build-stage /app/nginx.conf /etc/nginx/nginx.conf
+
+EXPOSE 80
