@@ -7,6 +7,12 @@ import configureStore from './store';
 
 const initialState = {
     todos: {},
+    stats: {
+        added: 0,
+        deleted: 0,
+        completed: 0,
+        uncompleted: 0,
+    }
 };
 
 const store = configureStore(initialState);

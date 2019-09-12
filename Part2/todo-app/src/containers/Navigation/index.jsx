@@ -17,7 +17,7 @@ export class Navigation extends React.Component {
         return (
             <div>
                 <button onClick={() => navigate("/")}>To Do List</button> |
-                <button onClick={() => navigate("/test")}>Test</button>
+                <button onClick={() => navigate("/reports")}>Reports</button>
             </div>
         );
     }

@@ -6,7 +6,7 @@ const Todo = ({ item, onCheckChanged, onDelete }) => {
 
     return (
         <li key={item.id}>
-            <input type="checkbox" onChange={onCheckChanged} />
+            <input type="checkbox" defaultChecked={item.completed} onChange={onCheckChanged} />
             <span style={textStyle}>{item.text}</span>
             <button onClick={onDelete}>Delete</button>
         </li>

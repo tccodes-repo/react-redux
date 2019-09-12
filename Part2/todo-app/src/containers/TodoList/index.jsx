@@ -9,7 +9,8 @@ import Todo from '../../components/Todo';
 export class ToDoList extends React.Component {
 
     static propTypes = {
-        todos: PropTypes.array
+        todos: PropTypes.array,
+        completed: PropTypes.number,
     }
 
     constructor(props) {
@@ -43,11 +44,16 @@ export class ToDoList extends React.Component {
             todos,
             addTodo,
             deleteTodo,
+            completed,
         } = this.props;
 
         const {
             todoValue
         } = this.state;
+
+        const encouragment = (completed > 0) ? 
+            <div>Congratulations you have completed {completed} todos today! And people really like you.</div> :
+            undefined;
 
         return (
             <div>
@@ -67,6 +73,7 @@ export class ToDoList extends React.Component {
                         ))}
                     </ul>
                 </div>
+                {encouragment}
             </div>
         );
     }
@@ -83,6 +90,7 @@ const mapStateToProps = (state) => {
 
     return {
         todos,
+        completed: state.stats.completed,
     };
 }
 
