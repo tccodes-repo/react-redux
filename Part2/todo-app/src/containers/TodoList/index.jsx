@@ -4,18 +4,7 @@ import * as actions from '../../actions/todoActions';
 import PropTypes from 'prop-types';
 import { forEach, keys } from 'lodash';
 
-const Todo = ({ item, onCheckChanged, onDelete }) => {
-
-    const textStyle = (item.completed) ? { textDecoration: 'line-through' } : {};
-
-    return (
-        <li key={item.id}>
-            <input type="checkbox" onChange={onCheckChanged} />
-            <span style={textStyle}>{item.text}</span>
-            <button onClick={onDelete}>Delete</button>
-        </li>
-    )
-};
+import Todo from '../../components/Todo';
 
 export class ToDoList extends React.Component {
 
@@ -102,6 +91,6 @@ const mapDispatchToProps = (dispatch) => ({
     deleteTodo: (todoId) => dispatch(actions.deleteTodo(todoId)),
     completeTodo: (todoId) => dispatch(actions.completeTodo(todoId)),
     uncompleteTodo: (todoId) => dispatch(actions.uncompleteTodo(todoId)),
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(ToDoList);
