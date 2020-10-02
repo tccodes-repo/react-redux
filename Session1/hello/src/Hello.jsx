@@ -1,4 +1,5 @@
 import React from "react";
+import "./home.css";
 
 class Hello extends React.Component {
   
